@@ -25,5 +25,5 @@
         <label for="goodFile">Фото товара (.jpg, .png, .gif)</label>
         <input id="goodFile" class="form-control" type="file" name="goodFile" value="<?= $goodUrl ?>">
     </div>
-        <button class="btn-outline-success btn-lg btn-block" <?= $buttonname ?> id="submit"><?= $button ?></button>
+    <button class="btn-outline-success btn-lg btn-block" <?= $buttonname ?> id="submit"><?= $button ?></button>
 </form>

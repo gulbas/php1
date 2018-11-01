@@ -2,28 +2,32 @@
 
 require '../engine/core.php';
 
-function routeIndex() {
+function routeIndex()
+{
     echo render('ajax/main');
 }
 
-function routeJsonitem() {
+function routeJsonitem()
+{
     $item = [
         'login' => 'Artur',
         'email' => 'test@example.com',
         'password' => '123123',
         'roles' => [
-            'user', 'manager',' admin'
+            'user', 'manager', ' admin'
         ],
     ];
 
     renderJson($item);
 }
 
-function routeInput() {
+function routeInput()
+{
     renderJson($_POST);
 }
 
-function routeObject() {
+function routeObject()
+{
     renderJson($_POST['user']);
 }
 

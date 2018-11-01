@@ -15,9 +15,10 @@
             <th scope="row"><?= $order['id'] ?></th>
             <td><?= $order['created_at'] ?></td>
             <td><?= $order['user_id'] ?></td>
-            <td><a href="admin.php?action=Orderview&change=<?= $order['id'] ?>"><?= $order['status'] ?></a></td>
+            <td><a class="status" data-id="<?= $order['id'] ?>" href="#"><?= $order['status'] ?></a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table>
 
+<script src="/js/orders.js" defer></script>

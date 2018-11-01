@@ -5,7 +5,8 @@ require '../../engine/core.php';
 /**
  * Выводим список категорий
  */
-function routeIndex() {
+function routeIndex()
+{
     $sql = "select * from users where login = '{$_SESSION['auth']['login']}'";
     $user = getItem($sql);
 
@@ -30,30 +31,29 @@ function routeIndex() {
     ]);
 }
 
-function routeView() {
+function routeView()
+{
     $id = $_GET['id'];
-    if (isset($_GET['id'])){
-    $order = getItemArray(
-        "select * from `order_item` where `order_id` = '{$id}'"
-    );
-    
-    $products = getItemArray(
-        "select * from `product`"
-    );
+    if (isset($_GET['id'])) {
+        $order = getItemArray(
+            "select * from `order_item` where `order_id` = '{$id}'"
+        );
 
-    $orderEnd = [];
+        $products = getItemArray(
+            "select * from `product`"
+        );
 
-    foreach ($order as $item) {
-        foreach ($products as $product) {
-            if ($item['product_id'] == $product['id']) {
-                $item['product_id'] = $product['name'];
+        $orderEnd = [];
+
+        foreach ($order as $item) {
+            foreach ($products as $product) {
+                if ($item['product_id'] == $product['id']) {
+                    $item['product_id'] = $product['name'];
+                }
             }
+            array_push($orderEnd, $item);
         }
-        array_push($orderEnd, $item);
     }
-    }
-
-
 
 
     echo render('shop/orderviwe', [

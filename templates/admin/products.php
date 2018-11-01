@@ -27,5 +27,4 @@
 
 <div class="text-center mt-5">
     <a class="btn btn-info" href="admin.php?action=products&add">Добавить товар</a>
-    <!--    <input type="submit" id="submit" class="btn btn-danger" name="logout" value="Выход"/>-->
 </div>

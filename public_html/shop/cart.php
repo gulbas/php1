@@ -37,15 +37,15 @@ function routeAdditem()
         $quantity = $_POST['quantity'];
         if (isset($_SESSION['cart'])) {
             $exist = -1;
-            
+
             // увеличиваем количество, если товар уже есть
             foreach ($_SESSION['cart']['items'] as $index => $item) {
                 if ($item['id'] == $id) {
                     $exist = $index;
                 }
             }
-            
-            if ($exist != -1){
+
+            if ($exist != -1) {
                 $_SESSION['cart']['items'][$exist]['quantity'] += $quantity;
                 renderJson([
                     'result' => 'OK',
@@ -84,6 +84,7 @@ function routeAdditem()
         ]);
     }
 }
+
 /**
  * Оформление заказа в БД
  */
