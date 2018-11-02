@@ -62,4 +62,15 @@ function routeView()
     ]);
 }
 
+
+function routeDel()
+{
+        $id = (int)$_POST['id'];
+        // var_dump($id);
+        execute("DELETE FROM `order_item` WHERE `order_id` = '{$id}'");
+        execute("DELETE FROM `order` WHERE `id` = '{$id}'");
+        renderJson($id);    
+
+}
+
 route();
